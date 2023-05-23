@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>País</title>
+</head>
+<body>
+    <h1>Localidade</h1>
+    País: 
+    <input type="text" id="local">      <!--INPUT CAIXA PAÍS-->
+    <input type="button" value="Enter" onclick="envio()">   <!--BOTÃO DE ENVIO-->
+    
+    <div id="text1"></div> <br>     <!--TEXTO 1-->
+    <div id="text2"></div>          <!--TEXTO 2-->
+
+    <script>
+        function envio() {           //Ativar a função do Botão ENVIO
+            var pais = document.getElementById('local').value //Variável _pais_ recebe o (value) do input do id da CAIXA PAÌS
+            var texto = document.getElementById('text1')      //Variável _texto_ recebe a conecção do TEXTO 1
+            var res = document.getElementById('text2')        //Variável  _res_  recebe a conecção do TEXTO 2
+        
+            if (pais == 'Brasil') {           //Se a variável _pais_ for Brasil
+                res.innerHTML = 'Você é Brasileiro!'      //O Html da variável _res_ recebe a mensagem para TEXTO 2
+            } else {
+                res.innerHTML = 'Você é estrangeiro!'   //Senão, O Html dessa variável recebe outra mensagem
+            }
+            
+            if (pais == 0) {  //Se o usuário escrever nada
+                res.innerHTML = 'Escreva um país'
+            } else {
+                texto.innerHTML = `Vivendo em ${pais}`   //Senão, o Html da variável _texto_ recebe a mensagem para TEXTO 1
+            }
+        }   
+    </script>
+</body>
+</html>
